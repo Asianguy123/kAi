@@ -12,6 +12,7 @@ import os
 import random
 import pickle
 import random
+import json
 import numpy
 import nltk
 from nltk.stem import WordNetLemmatizer
@@ -30,7 +31,8 @@ def training_main():
     pass
 
 def call_tm():
-    pass
+    for i in range(len(corpora)):
+        training_main(corpora[i])
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Globals
