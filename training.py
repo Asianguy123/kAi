@@ -21,13 +21,9 @@ from keras.layers import Dense, Dropout
 from keras.optimizers import SGD
 
 # ---------------------------------------------------------------------------------------------------------------------
-# Other Functions
+# Data Functions
 
-
-# ---------------------------------------------------------------------------------------------------------------------
-# Main functions
-
-def training_main():
+def get_data(corpus_file):
     pass
 
 def call_tm():
