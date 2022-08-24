@@ -24,7 +24,17 @@ from keras.optimizers import SGD
 # Data Functions
 
 def get_data(corpus_file):
-    pass
+    words = []
+    word_classes = []
+    docs = []
+    corpus = json.loads(open(f'{current_path}/corpora/{corpus_file}').read())
+    for intent in corpus['intents']:
+        for pattern in intent['patterns']:
+            pattern_words = nltk.word_tokenize(pattern)
+            words.extend(pattern_words)
+            docs.append((pattern_words, intent['tag']))
+            if intent['tag'] not in word_classes:
+                word_classes.append(intent['tag'])
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
