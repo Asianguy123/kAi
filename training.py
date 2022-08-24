@@ -35,7 +35,17 @@ def get_data(corpus_file):
             docs.append((pattern_words, intent['tag']))
             if intent['tag'] not in word_classes:
                 word_classes.append(intent['tag'])
-
+    save_data(words, word_classes, corpus_file)
+    
+def save_data(words_lst, word_classes_lst, corpus_file):
+    corpus_name = str(corpus_file).strip('.json')
+    words = []
+    for word in words_lst:
+        if word not in ignore_chrs:
+            word = str(word).lower()
+            word = lemmatiser.lemmatize(word)
+            words.append(word)
+    
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
