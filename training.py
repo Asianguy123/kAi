@@ -19,6 +19,15 @@ from keras.layers import Dense, Dropout
 from keras.optimizers import SGD
 
 # ---------------------------------------------------------------------------------------------------------------------
+# Model Creation Functions
+
+def create_training_data(word_set, word_classes_set, documents):
+    training_data = []
+    output_layer = [0] * len(word_classes_set)
+    for doc in documents:
+        print(doc)
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Data Functions
 
 def get_corpus_data(corpus_file):
