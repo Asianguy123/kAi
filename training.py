@@ -9,9 +9,7 @@ Runs only if models don't exist
 # Imports
 
 import os
-import random
 import pickle
-import random
 import json
 import numpy
 import nltk
@@ -23,7 +21,7 @@ from keras.optimizers import SGD
 # ---------------------------------------------------------------------------------------------------------------------
 # Data Functions
 
-def get_data(corpus_file):
+def get_corpus_data(corpus_file):
     words = []
     word_classes = []
     docs = []
@@ -35,21 +33,22 @@ def get_data(corpus_file):
             docs.append((pattern_words, intent['tag']))
             if intent['tag'] not in word_classes:
                 word_classes.append(intent['tag'])
-    save_data(words, word_classes, corpus_file)
+    save_data(words, word_classes, docs, corpus_file)
     
-def save_data(words_lst, word_classes_lst, corpus_file):
+def save_data(words_lst, word_classes_lst, docs_lst, corpus_file):
     corpus_name = str(corpus_file).strip('.json')
     words = sorted(set([lemmatiser.lemmatize(str(word).lower()) for word in words_lst if word not in ignore_chrs]))
     word_classes = sorted(set(word_classes_lst))
     pickle.dump(words, open(f'models/{corpus_name}_words.pkl', 'wb'))
     pickle.dump(word_classes, open(f'models/{corpus_name}_classes.pkl', 'wb'))
+    create_training_data(words, word_classes, docs_lst)
     
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
 def training_main():
     for i in range(len(corpora)):
-        get_data(corpora[i])
+        get_corpus_data(corpora[i])
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Globals
