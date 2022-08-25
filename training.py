@@ -25,7 +25,14 @@ def create_training_data(word_set, word_classes_set, documents):
     training_data = []
     output_layer = [0] * len(word_classes_set)
     for doc in documents:
-        print(doc)
+        input_data = []
+        doc_words = doc[0]
+        doc_words = [lemmatiser.lemmatize(str(word).lower()) for word in doc_words]
+        for word in word_set:
+            if word in doc_words:
+                input_data.append(1)
+            else:
+                input_data.append(0)
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Data Functions
