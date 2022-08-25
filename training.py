@@ -33,6 +33,14 @@ def create_training_data(word_set, word_classes_set, documents):
                 input_data.append(1)
             else:
                 input_data.append(0)
+    output_layer[list(word_classes_set).index(doc[1])] = 1
+    training_data.append([input_data, output_layer])
+    create_model(training_data)
+
+def create_model(training_data_arr):
+    training_data_arr = numpy.array(training_data_arr)
+    input_train = training_data_arr[:, 0]
+    output_train = training_data_arr[:, 1]
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Data Functions
