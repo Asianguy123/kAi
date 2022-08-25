@@ -41,7 +41,13 @@ def create_model(training_data_arr):
     training_data_arr = numpy.array(training_data_arr)
     input_train = training_data_arr[:, 0]
     output_train = training_data_arr[:, 1]
-
+    model = Sequential()
+    model.add(Dense(256, input_shape=len(input_train[0]), activation='relu'))
+    model.add(Dropout(0.2))
+    model.add(Dense(128, activation='relu'))
+    model.add(Dropout(0.2))
+    model.add(Dense(len(output_train[0]), activation='softmax'))
+    
 # ---------------------------------------------------------------------------------------------------------------------
 # Data Functions
 
@@ -90,3 +96,4 @@ ignore_chrs = ['?', '!', '.', ',', "'", '"', '/', '£', '$',
 
 if __name__ == '__main__':
     training_main()
+    
