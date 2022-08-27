@@ -73,7 +73,8 @@ def get_corpus_data(corpus_file):
     
 def save_data(words_lst, word_classes_lst, docs_lst, corpus_file):
     corpus_name = str(corpus_file).strip('.json')
-    words = sorted(set([lemmatiser.lemmatize(str(word).lower()) for word in words_lst if word not in ignore_chrs]))
+    words = [lemmatiser.lemmatize(str(word).lower()) for word in words_lst if word not in ignore_chrs]
+    words = sorted(set(words))
     word_classes = sorted(set(word_classes_lst))
     pickle.dump(words, open(f'models/{corpus_name}_words.pkl', 'wb'))
     pickle.dump(word_classes, open(f'models/{corpus_name}_classes.pkl', 'wb'))
@@ -102,4 +103,3 @@ ignore_chrs = ['?', '!', '.', ',', "'", '"', '/', '£', '$',
 
 if __name__ == '__main__':
     training_main()
-    
