@@ -10,6 +10,7 @@ Runs only if models don't exist
 
 import os
 import pickle
+import random
 import json
 import numpy
 import nltk
@@ -23,7 +24,7 @@ from keras.optimizers import SGD
 
 def create_training_data(word_set, word_classes_set, documents):
     training_data = []
-    output_layer = [0] * len(word_classes_set)
+    output_layer_empty = [0] * len(word_classes_set)
     for doc in documents:
         input_data = []
         doc_words = doc[0]
@@ -33,8 +34,9 @@ def create_training_data(word_set, word_classes_set, documents):
                 input_data.append(1)
             else:
                 input_data.append(0)
-    output_layer[list(word_classes_set).index(doc[1])] = 1
-    training_data.append([input_data, output_layer])
+        output_layer = list(output_layer_empty)
+        output_layer[list(word_classes_set).index(doc[1])] = 1
+        training_data.append([input_data, output_layer])
     create_model(training_data)
 
 def create_model(training_data_arr):
