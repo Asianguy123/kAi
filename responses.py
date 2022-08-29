@@ -27,7 +27,13 @@ def message_clean_up(message_text):
     return message_words
 
 def bow(message_text, words):
-    pass
+    message_words = message_clean_up(message_text)
+    bag = [0] * len(words)
+    for m_word in message_words:
+        for i, word in enumerate(words):
+            if word == m_word:
+                bag[i] = 1
+    return numpy.array(bag)
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
