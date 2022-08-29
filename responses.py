@@ -22,8 +22,12 @@ from keras.models import load_model
 # Main Function
 
 def responses_main(model_name):
-    pass
-    
+    words = pickle.load(f'models/{model_name}_words.pkl', 'rb')
+    words_classes = pickle.load(f'models/{model_name}_classes.pkl', 'rb')
+    model = load_model(f'models/{model_name}_model.h5')
+    corpus = json.loads(open(f'corpora/{model_name}.json').read())
+
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Globals
 
