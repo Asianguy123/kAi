@@ -26,6 +26,9 @@ def message_clean_up(message_text):
     message_words = [lemmatiser.lemmatize(word) for word in message_words]
     return message_words
 
+def bow(message_text, words):
+    pass
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
