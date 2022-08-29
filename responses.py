@@ -21,6 +21,11 @@ from keras.models import load_model
 # ---------------------------------------------------------------------------------------------------------------------
 # BOW Functions
 
+def message_clean_up(message_text):
+    message_words = nltk.word_tokenize(message_text)
+    message_words = [lemmatiser.lemmatize(word) for word in message_words]
+    return message_words
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
