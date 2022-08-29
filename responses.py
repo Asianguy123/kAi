@@ -17,3 +17,15 @@ import numpy
 import nltk
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Main Function
+
+def responses_main(model_name):
+    pass
+    
+# ---------------------------------------------------------------------------------------------------------------------
+# Globals
+
+current_path = os.getcwd()
+lemmatiser = WordNetLemmatizer()
