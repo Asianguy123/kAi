@@ -21,15 +21,19 @@ from keras.models import load_model
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
-def responses_main(model_name):
-    words = pickle.load(f'models/{model_name}_words.pkl', 'rb')
-    words_classes = pickle.load(f'models/{model_name}_classes.pkl', 'rb')
+def responses_main(model_name, message_text):
+    words = pickle.load(open(f'models/{model_name}_words.pkl', 'rb'))
+    words_classes = pickle.load(open(f'models/{model_name}_classes.pkl', 'rb'))
     model = load_model(f'models/{model_name}_model.h5')
     corpus = json.loads(open(f'corpora/{model_name}.json').read())
 
+    get_probabilities(message_text, words, model)
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Globals
 
 current_path = os.getcwd()
 lemmatiser = WordNetLemmatizer()
+ERROR_THRESHOLD = 0.1
+
+responses_main('dummy', 'hello')
