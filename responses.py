@@ -19,6 +19,9 @@ from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
 
 # ---------------------------------------------------------------------------------------------------------------------
+# BOW Functions
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
 def responses_main(model_name, message_text):
