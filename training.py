@@ -22,7 +22,7 @@ from keras.optimizers import SGD
 # ---------------------------------------------------------------------------------------------------------------------
 # Model Creation Functions
 
-def create_training_data(word_set, word_classes_set, documents):
+def create_training_data(word_set, word_classes_set, documents, corpus_name):
     training_data = []
     output_layer_empty = [0] * len(word_classes_set)
     for doc in documents:
@@ -37,9 +37,9 @@ def create_training_data(word_set, word_classes_set, documents):
         output_layer = list(output_layer_empty)
         output_layer[list(word_classes_set).index(doc[1])] = 1
         training_data.append([input_data, output_layer])
-    create_model(training_data)
+    create_model(training_data, corpus_name)
 
-def create_model(training_data_arr):
+def create_model(training_data_arr, corpus_name):
     random.shuffle(training_data_arr)
     training_data_arr = numpy.array(training_data_arr)
     input_train = list(training_data_arr[:, 0])
@@ -53,6 +53,7 @@ def create_model(training_data_arr):
     sgd = SGD(learning_rate=0.01, momentum=0.5, nesterov=True)
     model.compile(loss='categorical_crossentropy', optimizer=sgd, weighted_metrics=['accuracy'])
     model_owr = model.fit(numpy.array(input_train), numpy.array(output_train), epochs=200, batch_size=5, verbose=1)
+    model.save(f'models/{corpus_name}_model.h5', model_owr)
     
 # ---------------------------------------------------------------------------------------------------------------------
 # Data Functions
@@ -78,7 +79,7 @@ def save_data(words_lst, word_classes_lst, docs_lst, corpus_file):
     word_classes = sorted(set(word_classes_lst))
     pickle.dump(words, open(f'models/{corpus_name}_words.pkl', 'wb'))
     pickle.dump(word_classes, open(f'models/{corpus_name}_classes.pkl', 'wb'))
-    create_training_data(words, word_classes, docs_lst)
+    create_training_data(words, word_classes, docs_lst, corpus_name)
     
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
