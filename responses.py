@@ -50,6 +50,13 @@ def get_class(results, word_classes):
     class_tag = word_classes[class_index]
     return class_tag
 
+def get_response(class_tag, corpus):
+    corpus_intents = corpus['intents']
+    for i in corpus_intents:
+        if i['tag'] == class_tag:
+            chatbot_response = random.choice(i['responses'])
+    return chatbot_response
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
