@@ -36,6 +36,15 @@ def bow(message_text, words):
     return numpy.array(bag)
 
 # ---------------------------------------------------------------------------------------------------------------------
+# Response Retrieval Functions
+
+def get_probabilities(message_text, words, model):
+    bag_of_words = bow(message_text, words)
+    prediction = model.predict(numpy.array([bag_of_words]))[0]
+    results = [[i, result] for i, result in enumerate(prediction) if result > ERROR_THRESHOLD]
+    return results
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
 def responses_main(model_name, message_text):
