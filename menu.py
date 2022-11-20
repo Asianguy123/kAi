@@ -16,7 +16,7 @@ import pygame
 # User Manual Function
 
 def user_manual():
-    pass
+    um_images = []
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
@@ -38,6 +38,7 @@ def main():
         pygame.display.flip()
         CLOCK.tick(60)
         SCREEN.blit(bg_image, (0,0))
+    
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Setup
@@ -49,4 +50,10 @@ SCREEN_HEIGHT = 720
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.NOFRAME)
 pygame.display.set_caption('kAi')
 current_dir = os.getcwd()
-bg_image = pygame.image.load(f'{current_dir}/Images/main_menu.tif')
+bg_image = pygame.image.load(f'{current_dir}/images/main_menu.tif')
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Runs Code
+
+if __name__ == '__main__':
+    main()
