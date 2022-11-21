@@ -1,4 +1,4 @@
-# Training the Network
+# Training the Neural Network
 
 '''
 Creates the models based on the corpora
