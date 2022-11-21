@@ -30,6 +30,8 @@ def create_training_data(word_set, word_classes_set, documents, corpus_name):
 
     training_data = []
     output_layer_empty = [0] * len(word_classes_set) # output layer indicates which class the input belongs to
+    
+    # iterating through each document to create a set of training data
     for doc in documents:
         input_data = []
         doc_words = doc[0]
