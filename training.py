@@ -23,8 +23,13 @@ from keras.optimizers import SGD
 # Model Creation Functions
 
 def create_training_data(word_set, word_classes_set, documents, corpus_name):
+    '''
+    Creates an array of data from a corpus, that matches the input data against the expected output
+    - this is used to determine how well the model is working, and to form and optimise the loss function
+    '''
+
     training_data = []
-    output_layer_empty = [0] * len(word_classes_set)
+    output_layer_empty = [0] * len(word_classes_set) # output layer indicates which class the input belongs to
     for doc in documents:
         input_data = []
         doc_words = doc[0]
