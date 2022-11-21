@@ -36,6 +36,8 @@ def create_training_data(word_set, word_classes_set, documents, corpus_name):
         input_data = []
         doc_words = doc[0]
         doc_words = [lemmatiser.lemmatize(str(word).lower()) for word in doc_words]
+
+        # matches lemmatised set of words against original tokenised pattern words to create a binary list
         for word in word_set:
             if word in doc_words:
                 input_data.append(1)
