@@ -57,6 +57,8 @@ def create_model(training_data_arr, corpus_name):
     - utilises Stochastic Gradient Descent, Categorical Crossentropy loss function, ReLU and Softmax functions to get probabilities
     - runs for 200 generations
     '''
+
+    # randomising data and converting to numpy array as required by TensorFlow
     random.shuffle(training_data_arr)
     training_data_arr = numpy.array(training_data_arr)
     input_train = list(training_data_arr[:, 0])
