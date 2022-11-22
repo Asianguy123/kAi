@@ -51,6 +51,12 @@ def create_training_data(word_set, word_classes_set, documents, corpus_name):
     create_model(training_data, corpus_name)
 
 def create_model(training_data_arr, corpus_name):
+    '''
+    Using TensorFlow creates a Seq2Seq model that trains using the data formed in create_training_data()
+    - model has nodes 256-128-128-4 with 0.2 Dropout between each layer
+    - utilises Stochastic Gradient Descent, Categorical Crossentropy loss function, ReLU and Softmax functions to get probabilities
+    - runs for 200 generations
+    '''
     random.shuffle(training_data_arr)
     training_data_arr = numpy.array(training_data_arr)
     input_train = list(training_data_arr[:, 0])
