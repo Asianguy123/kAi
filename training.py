@@ -43,9 +43,11 @@ def create_training_data(word_set, word_classes_set, documents, corpus_name):
                 input_data.append(1)
             else:
                 input_data.append(0)
+        
+        # correct output is the word class (doc[1]), creates an array of inputs that can be fed into the model
         output_layer = list(output_layer_empty)
-        output_layer[list(word_classes_set).index(doc[1])] = 1
-        training_data.append([input_data, output_layer])
+        output_layer[list(word_classes_set).index(doc[1])] = 1 
+        training_data.append([input_data, output_layer]) 
     create_model(training_data, corpus_name)
 
 def create_model(training_data_arr, corpus_name):
