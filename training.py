@@ -63,12 +63,16 @@ def create_model(training_data_arr, corpus_name):
     training_data_arr = numpy.array(training_data_arr)
     input_train = list(training_data_arr[:, 0])
     output_train = list(training_data_arr[:, 1])
+
+    # creating the model with the specified layers 
     model = Sequential()
     model.add(Dense(256, input_shape=(len(input_train[0]),), activation='relu'))
     model.add(Dropout(0.2))
-    model.add(Dense(128, activation='relu'))
+    model.add(Dense(128, input_shape=(1,), activation='relu'))
     model.add(Dropout(0.2))
     model.add(Dense(len(output_train[0]), activation='softmax'))
+
+    # optimisation and loss function implementation for machine learning
     sgd = SGD(learning_rate=0.01, momentum=0.5, nesterov=True)
     model.compile(loss='categorical_crossentropy', optimizer=sgd, weighted_metrics=['accuracy'])
     model_owr = model.fit(numpy.array(input_train), numpy.array(output_train), epochs=200, batch_size=5, verbose=1)
