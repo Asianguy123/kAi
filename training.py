@@ -82,6 +82,11 @@ def create_model(training_data_arr, corpus_name):
 # Data Functions
 
 def get_corpus_data(corpus_file):
+    '''
+    Extracts all the corpus data from a given JSON file and stores them in lists
+    - gets pattern words, class tag names and documents (word-class pairs)
+    '''
+    
     words = []
     word_classes = []
     docs = []
