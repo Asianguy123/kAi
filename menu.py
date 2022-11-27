@@ -2,7 +2,7 @@
 
 '''
 Start-up file
-Menu interface - has sound options + advance to chat session
+Menu interface - has sound options, access to user_manual and advance to chat session
 '''
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -11,6 +11,11 @@ Menu interface - has sound options + advance to chat session
 import os
 import sys
 import pygame
+import user_manual
+import win32api
+import win32con
+import win32gui
+import cwi
 
 # ---------------------------------------------------------------------------------------------------------------------
 # User Manual Function
