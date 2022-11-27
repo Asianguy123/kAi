@@ -51,12 +51,13 @@ def main():
 
 pygame.init()
 CLOCK = pygame.time.Clock()
-SCREEN_WIDTH = 571
+SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720 
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.NOFRAME)
-pygame.display.set_caption('kAi')
 current_dir = os.getcwd()
 bg_image = pygame.image.load(f'{current_dir}/images/main_menu.tif')
+font_s = pygame.font.SysFont('Calibri', 20, bold=True)
+font_r = pygame.font.SysFont('Calibri', 18, bold=True)
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Runs Code
