@@ -21,7 +21,8 @@ import cwi
 # User Manual Function
 
 def user_manual():
-    um_images = []
+    um_images = [pic for pic in os.listdir(f'{current_dir}/images/user_manual_images/') if pic.endswith('.tif')]
+    image_index = 0
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
