@@ -18,49 +18,14 @@ import win32gui
 import cwi
 
 # ---------------------------------------------------------------------------------------------------------------------
-# User Manual Function
-
-def user_manual():
-    um_images = [pic for pic in os.listdir(f'{current_dir}/images/user_manual_images/') if pic.endswith('.tif')]
-    image_index = 0
-    click = False
-    while True:
-        
-        mx, my = pygame.mouse.get_pos() 
-       
-        # event loop
-        click = False
-        for event in pygame.event.get():    
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 1:
-                    click = True
-        image = pygame.image.load(um_images[image_index])
-        # window update
-        pygame.display.flip()
-        CLOCK.tick(60)
-        SCREEN.blit(image, (0,0))
-
-# ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
 def main():
-    click = False
-    while True:
-        
-        mx, my = pygame.mouse.get_pos() 
-       
-        # event loop
-        click = False
-        for event in pygame.event.get():    
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 1:
-                    click = True
-                    
-        # window update
-        pygame.display.flip()
-        CLOCK.tick(60)
-        SCREEN.blit(bg_image, (0,0))
-    
+    '''
+    Main function for the main menu, runs and display menu screen
+    Calls other screens, dependent on user action
+    '''
+    pass
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Setup
@@ -74,6 +39,12 @@ current_dir = os.getcwd()
 bg_image = pygame.image.load(f'{current_dir}/images/main_menu.tif')
 font_s = pygame.font.SysFont('Calibri', 20, bold=True)
 font_r = pygame.font.SysFont('Calibri', 18, bold=True)
+
+# making the empty background transparent
+transparent = (255, 0, 0)
+hwnd = pygame.display.get_wm_info()["window"]
+win32gui.SetWindowLong(hwnd, win32con.GWL_EXSTYLE, win32gui.GetWindowLong(hwnd, win32con.GWL_EXSTYLE) | win32con.WS_EX_LAYERED)
+win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(*transparent), 0, win32con.LWA_COLORKEY)
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Runs Code
