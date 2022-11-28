@@ -23,6 +23,22 @@ import cwi
 def user_manual():
     um_images = [pic for pic in os.listdir(f'{current_dir}/images/user_manual_images/') if pic.endswith('.tif')]
     image_index = 0
+    click = False
+    while True:
+        
+        mx, my = pygame.mouse.get_pos() 
+       
+        # event loop
+        click = False
+        for event in pygame.event.get():    
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    click = True
+        image = pygame.image.load(um_images[image_index])
+        # window update
+        pygame.display.flip()
+        CLOCK.tick(60)
+        SCREEN.blit(image, (0,0))
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
