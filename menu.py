@@ -25,7 +25,19 @@ def main():
     Main function for the main menu, runs and display menu screen
     Calls other screens, dependent on user action
     '''
-    pass
+
+    # booleans
+    click = False
+    message_notif_s = True
+    message_notif_r = True
+
+    # click boxes
+    quit_icon = pygame.Rect(891, 7, 24, 24)
+    chat_button = pygame.Rect(544, 366, 190, 57)
+    help_button = pygame.Rect(544, 456, 190, 58)
+    sent_notif_button= pygame.Rect(543, 540, 192, 57)
+    received_notif_button = pygame.Rect(544, 623, 190, 57)
+    hover_boxes = [chat_button, help_button, sent_notif_button, received_notif_button]
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Setup
