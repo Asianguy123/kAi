@@ -18,6 +18,18 @@ import win32gui
 import cwi
 
 # ---------------------------------------------------------------------------------------------------------------------
+# Support Functions
+
+def draw_rect_transparent(surface, colour, rect):
+    '''
+    Draws transparent rectangles on given surface
+    '''
+
+    shape_surf = pygame.Surface(pygame.Rect(rect).size, pygame.SRCALPHA) # makes a surface from rectangles of given rectangles, with alpha property
+    pygame.draw.rect(shape_surf, colour, shape_surf.get_rect()) # draws rectangle using surface
+    surface.blit(shape_surf, rect)
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
 def main():
