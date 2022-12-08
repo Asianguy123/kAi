@@ -74,11 +74,14 @@ def main():
 
     # click boxes
     quit_icon = pygame.Rect(891, 7, 24, 24)
-    chat_button = pygame.Rect(544, 366, 190, 57)
-    help_button = pygame.Rect(544, 456, 190, 58)
-    sent_notif_button= pygame.Rect(543, 540, 192, 57)
-    received_notif_button = pygame.Rect(544, 623, 190, 57)
+    chat_button = pygame.Rect(542, 366, 192, 58)
+    help_button = pygame.Rect(542, 454, 192, 58)
+    sent_notif_button= pygame.Rect(542, 541, 192, 58)
+    received_notif_button = pygame.Rect(542, 628, 192, 58)
     hover_boxes = [chat_button, help_button, sent_notif_button, received_notif_button]
+
+    while True:
+        mx, my = pygame.mouse.get_pos()
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Setup
