@@ -97,7 +97,12 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     click = True
-
+        
+        # box hover outline
+        for box in hover_boxes:
+            if box.collidepoint(mx, my):
+                pygame.draw.rect(SCREEN, (0, 184, 252), box, 4)
+                
 # ---------------------------------------------------------------------------------------------------------------------
 # Setup
 
