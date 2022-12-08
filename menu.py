@@ -90,6 +90,13 @@ def main():
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), sent_notif_button)
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), received_notif_button)
         notification_box_text(message_notif_s, message_notif_r, sent_notif_button, received_notif_button)
+        
+        # event loop
+        click = False
+        for event in pygame.event.get():    
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    click = True
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Setup
