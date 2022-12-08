@@ -39,6 +39,25 @@ def draw_centred_text(text, font, color, surface, x, y):
     text_rect.center = (x, y)
     surface.blit(text_obj, text_rect)
     
+def notification_box_text(message_notif_s, message_notif_r, sent_notif_button, received_notif_button):
+    '''
+    Outputs notification toggle button text to indicate what the currently selected option is
+    '''
+
+    # message sent notification
+    if message_notif_s:
+        str_notif_s = 'ON'
+    else:
+        str_notif_s = 'OFF'
+    draw_centred_text(f'Message Sent: {str_notif_s}', font_s, (255, 255, 255), SCREEN, sent_notif_button.centerx, sent_notif_button.centery)
+
+    # message received notification
+    if message_notif_r:
+        str_notif_r = 'ON'
+    else:
+        str_notif_r = 'OFF'
+    draw_centred_text(f'Message Received: {str_notif_r}', font_r, (255, 255, 255), SCREEN, received_notif_button.centerx, received_notif_button.centery)
+    
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
