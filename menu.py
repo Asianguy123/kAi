@@ -82,6 +82,14 @@ def main():
 
     while True:
         mx, my = pygame.mouse.get_pos()
+        
+        # drawing click boxes and notification box text
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), quit_icon)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), chat_button)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), help_button)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), sent_notif_button)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), received_notif_button)
+        notification_box_text(message_notif_s, message_notif_r, sent_notif_button, received_notif_button)
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Setup
