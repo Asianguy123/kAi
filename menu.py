@@ -38,7 +38,7 @@ def draw_centred_text(text, font, color, surface, x, y):
     text_rect = text_obj.get_rect()
     text_rect.center = (x, y)
     surface.blit(text_obj, text_rect)
-    
+
 def notification_box_text(message_notif_s, message_notif_r, sent_notif_button, received_notif_button):
     '''
     Outputs notification toggle button text to indicate what the currently selected option is
@@ -57,7 +57,7 @@ def notification_box_text(message_notif_s, message_notif_r, sent_notif_button, r
     else:
         str_notif_r = 'OFF'
     draw_centred_text(f'Message Received: {str_notif_r}', font_r, (255, 255, 255), SCREEN, received_notif_button.centerx, received_notif_button.centery)
-    
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
@@ -82,26 +82,33 @@ def main():
 
     while True:
         mx, my = pygame.mouse.get_pos()
-        
-        # drawing click boxes and notification box text
+
+        # ---------------------------------------------------------------------------------------------------------------------
+        # Drawing Items
+
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), quit_icon)
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), chat_button)
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), help_button)
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), sent_notif_button)
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), received_notif_button)
         notification_box_text(message_notif_s, message_notif_r, sent_notif_button, received_notif_button)
-        
-        # event loop
+
+        # box hover outline
+        for box in hover_boxes:
+            if box.collidepoint(mx, my):
+                pygame.draw.rect(SCREEN, (0, 184, 252), box, 4)
+   
+        # ---------------------------------------------------------------------------------------------------------------------
+        # Event Loop
+
         click = False
         for event in pygame.event.get():    
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     click = True
-        
-        # box hover outline
-        for box in hover_boxes:
-            if box.collidepoint(mx, my):
-                pygame.draw.rect(SCREEN, (0, 184, 252), box, 4)
+
+        # ---------------------------------------------------------------------------------------------------------------------
+        # Clicks
                 
 # ---------------------------------------------------------------------------------------------------------------------
 # Setup
