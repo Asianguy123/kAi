@@ -120,6 +120,16 @@ def main():
             if quit_icon.collidepoint(mx, my):
                 pygame.quit()
                 sys.exit()
+            
+            # chat button click detection, send to chat window
+            if chat_button.collidepoint(mx, my):
+                cwi.chat_window()
+        
+            # notification toggle click detection
+            if sent_notif_button.collidepoint(mx, my):
+                message_notif_s = not message_notif_s
+            if received_notif_button.collidepoint(mx, my):
+                message_notif_r = not message_notif_r
         
 # ---------------------------------------------------------------------------------------------------------------------
 # Setup
