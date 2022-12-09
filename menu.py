@@ -130,28 +130,9 @@ def main():
                 message_notif_s = not message_notif_s
             if received_notif_button.collidepoint(mx, my):
                 message_notif_r = not message_notif_r
-        
-# ---------------------------------------------------------------------------------------------------------------------
-# Setup
 
-pygame.init()
-CLOCK = pygame.time.Clock()
-SCREEN_WIDTH = 1280
-SCREEN_HEIGHT = 720 
-SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.NOFRAME)
-current_dir = os.getcwd()
-bg_image = pygame.image.load(f'{current_dir}/images/main_menu.tif')
-font_s = pygame.font.SysFont('Calibri', 20, bold=True)
-font_r = pygame.font.SysFont('Calibri', 18, bold=True)
-
-# making the empty background transparent
-transparent = (255, 0, 0)
-hwnd = pygame.display.get_wm_info()["window"]
-win32gui.SetWindowLong(hwnd, win32con.GWL_EXSTYLE, win32gui.GetWindowLong(hwnd, win32con.GWL_EXSTYLE) | win32con.WS_EX_LAYERED)
-win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(*transparent), 0, win32con.LWA_COLORKEY)
-
-# ---------------------------------------------------------------------------------------------------------------------
-# Runs Code
-
-if __name__ == '__main__':
-    main()
+        # window update
+        pygame.display.flip()
+        CLOCK.tick(60)
+        SCREEN.fill(transparent)
+        SCREEN.blit(bg_image, (354,0))
