@@ -66,7 +66,7 @@ def um_main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     click = True
-                    
+
         # special case on slide 0, home icon and quit icon 
         if image_index == 0:
             if home_icon.collidepoint(mx, my):
@@ -76,3 +76,13 @@ def um_main():
                 if click:
                     pygame.quit()
                     sys.exit()
+        
+        # implementing slideshow 
+        if click:
+            image_index = (image_index + 1) % len(um_images)
+        image = pygame.image.load(f'{current_dir}/images/user_manual_images/{um_images[image_index]}')
+        
+        # window update
+        pygame.display.flip()
+        CLOCK.tick(60)
+        SCREEN.blit(image, (0,0))
