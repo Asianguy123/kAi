@@ -26,3 +26,27 @@ def draw_rect_transparent(surface, colour, rect):
     shape_surf = pygame.Surface(pygame.Rect(rect).size, pygame.SRCALPHA) # makes a surface from rectangles of given rectangles, with alpha property
     pygame.draw.rect(shape_surf, colour, shape_surf.get_rect()) # draws rectangle using surface
     surface.blit(shape_surf, rect)
+
+# ---------------------------------------------------------------------------------------------------------------------
+# User Manual Function
+
+def um_main():
+    '''
+    Runs the user manual, displays a slideshow of images that loops
+    Has special case buttons that work on a specific slide (slide 0)
+    Can be exited to return to main menu at any point by pressing the ESC key
+    '''
+
+    # setup
+    current_dir = os.getcwd()
+    um_images = [pic for pic in os.listdir(f'{current_dir}/images/user_manual_images/') if pic.endswith('.tif')]
+    click = False
+    image_index = 0
+    
+    # click boxes
+    home_icon = pygame.Rect(10, 7, 27, 24)
+    quit_icon = pygame.Rect(1249, 7, 23, 23)
+
+    running = True
+    while running:
+        pass
