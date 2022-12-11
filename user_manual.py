@@ -49,4 +49,20 @@ def um_main():
 
     running = True
     while running:
-        pass
+        mx, my = pygame.mouse.get_pos()
+
+        # drawing click boxes
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), home_icon)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), quit_icon)
+
+        # ---------------------------------------------------------------------------------------------------------------------
+        # Events
+
+        click = False
+        for event in pygame.event.get(): 
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    running = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    click = True
