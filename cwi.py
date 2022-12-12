@@ -11,6 +11,7 @@ Output responses.py is fed into this file and outputted
 import os
 import sys
 import pygame
+import datetime
 import menu
 import user_manual
 
