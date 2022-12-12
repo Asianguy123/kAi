@@ -17,5 +17,10 @@ import user_manual
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
 
-def main():
-    pass
+def chat_window(notif_s, notif_r):
+
+    # setup
+    CWSCREEN = menu.SCREEN
+    CWCLOCK = menu.CLOCK
+    CWMESSAGE_SIZE = 24
+    current_dir = os.getcwd()
