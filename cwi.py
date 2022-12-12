@@ -23,4 +23,12 @@ def chat_window(notif_s, notif_r):
     CWSCREEN = menu.SCREEN
     CWCLOCK = menu.CLOCK
     CWMESSAGE_SIZE = 24
+    MAX_BUBBLE_LENGTH = 300
     current_dir = os.getcwd()
+    bg_image = pygame.image.load(f'{current_dir}/images/cwindow.tif')
+    font_message_box = pygame.font.SysFont('Calibri', 20, bold=True)
+    small_font = pygame.font.SysFont('Calibri', 14, bold=True)
+    font_messages = pygame.font.SysFont('Calibri', CWMESSAGE_SIZE, bold=True)
+    topic_font = pygame.font.SysFont('Calibri', CWMESSAGE_SIZE - 4, bold=True, italic=True)
+    message_s_notif = pygame.mixer.Sound(f'{current_dir}/notifications/message_sent.mp3')
+    message_r_notif = pygame.mixer.Sound(f'{current_dir}/notifications/message_received.mp3')
