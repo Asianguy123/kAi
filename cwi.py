@@ -34,7 +34,7 @@ def chat_window(notif_s, notif_r):
     message_s_notif = pygame.mixer.Sound(f'{current_dir}/notifications/message_sent.mp3')
     message_r_notif = pygame.mixer.Sound(f'{current_dir}/notifications/message_received.mp3')
 
-    # toggle + text
+    # toggles. lists and text
     message_lines_list = []
     responses_lines_list = []
     message_thread = []
