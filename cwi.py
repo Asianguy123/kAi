@@ -43,3 +43,8 @@ def chat_window(notif_s, notif_r):
     typing_active = False
     message_limit = False
     text = ''      
+    
+    # icons
+    home_icon = pygame.Rect(10, 7, 27, 24)
+    quit_icon = pygame.Rect(1249, 7, 23, 23)
+    send_icon = pygame.Rect(1160, 636, 30, 27)
