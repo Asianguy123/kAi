@@ -48,3 +48,19 @@ def chat_window(notif_s, notif_r):
     home_icon = pygame.Rect(10, 7, 27, 24)
     quit_icon = pygame.Rect(1249, 7, 23, 23)
     send_icon = pygame.Rect(1160, 636, 30, 27)
+
+    # topic buttons
+    topic_buttons = [
+        pygame.Rect(49, 87, 143, 46),
+        pygame.Rect(49, 153, 143, 46),
+        pygame.Rect(49, 219, 143, 46),
+        pygame.Rect(49, 285, 143, 46),
+        pygame.Rect(49, 351, 143, 46),
+        pygame.Rect(49, 417, 143, 46),
+        pygame.Rect(49, 483, 143, 46),
+        pygame.Rect(49, 549, 143, 46),
+        pygame.Rect(49, 615, 143, 46)
+    ]
+    topic_strs = ['General Chat', 'Anime', 'Kpop', 'Films', 'Games', 'Football', 'Your life', 'Your day', 'School']
+    corpus_topics = ['general', 'anime', 'kpop', 'films', 'game', 'football', 'life', 'day', 'school']
+    selected_topic_index = 0
