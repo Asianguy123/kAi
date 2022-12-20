@@ -27,6 +27,17 @@ def draw_rect_transparent(surface, colour, rect, radius):
     pygame.draw.rect(shape_surf, colour, shape_surf.get_rect(), border_radius=radius) # draws rectangle using surface
     surface.blit(shape_surf, rect)
 
+def draw_lefted_text(text, font, color, surface, x, y):
+    '''
+    Outputs text at the specified location, with (x,y) being the left centre of the text object, using the required parameters
+    '''
+
+    text_obj = font.render(text, 1, color)
+    text_rect = text_obj.get_rect()
+    text_rect.left = x
+    text_rect.centery = y
+    surface.blit(text_obj, text_rect)
+    
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
 
