@@ -39,6 +39,18 @@ def draw_lefted_text(text, font, color, surface, x, y):
     surface.blit(text_obj, text_rect)
     
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Chat Window Support Functions
+
+def get_time():
+    '''
+    Gets current device time in 24 hour using the datetime module
+    '''
+
+    timestamp = datetime.datetime.now()
+    timestamp = timestamp.strftime('%H:%M') # formats to 24 hour
+    return timestamp
+
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
 
 def chat_window(notif_s, notif_r):
