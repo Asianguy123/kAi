@@ -101,6 +101,11 @@ def draw_messages(thread, font, font_size, time_font, topic_font, screen):
             bubble_height = int((len(i[1]) + 1) * (font_size))
             bubble_width = 0
 
+            # assigning bubble width based on message line lengths
+            for line in i[1]:
+                if font.size(line)[0] > bubble_width:
+                    bubble_width = font.size(line)[0] + 20
+
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
 
