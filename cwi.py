@@ -113,6 +113,17 @@ def draw_messages(thread, font, font_size, time_font, topic_font, screen):
             else:
                 x = 1204 - bubble_width
                 time_x = x - 40
+            
+            # outputting text and if within most recent messages
+            if (y - bubble_height) > 70:
+                bubble = pygame.Rect(x, y - bubble_height, bubble_width, bubble_height)
+                pygame.draw.rect(screen, (38, 38, 38), bubble, border_radius=15)
+                for j, line in enumerate(reversed(i[1])):
+                    draw_lefted_text(line, font, (255, 255, 255), screen, bubble.left + 10, y - (j + 1) * (bubble_height / (len(i[1]) + 1)))
+                draw_lefted_text(i[2], time_font, (217, 217, 217), screen, time_x, bubble.centery)
+                y -= (bubble_height + 10)
+            else:
+                return
 
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
