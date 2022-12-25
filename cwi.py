@@ -193,4 +193,13 @@ def chat_window(notif_s, notif_r):
         # text input limit display
         if message_limit:
             draw_lefted_text('Message length limit reached!', FONT_CB_14, (0, 184, 252), SCREEN, message_box.left, message_box.bottom + 8)
+            
+        # ---------------------------------------------------------------------------------------------------------------------
+        # Getting AI response
+
+        if message_thread:
+            if message_thread[-1][0] == 0:
+                # time delay between notifs
+                loop = True
+                start_time = time.time()           
 
