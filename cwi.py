@@ -201,5 +201,9 @@ def chat_window(notif_s, notif_r):
             if message_thread[-1][0] == 0:
                 # time delay between notifs
                 loop = True
-                start_time = time.time()           
+                start_time = time.time()
+                while loop:
+                    end_time = time.time()
+                    if (end_time - start_time) > 0.3:
+                        loop = False        
 
