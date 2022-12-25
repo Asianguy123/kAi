@@ -181,3 +181,16 @@ def chat_window(notif_s, notif_r):
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), quit_icon, 0)
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), send_icon, 0)
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), message_box, 0)
+        for button in topic_buttons:
+            draw_rect_transparent(SCREEN, (0, 0, 0, 0), button, 4)
+            if button.collidepoint(mx, my):
+                hover = True
+                hover_button = button
+        box_hover(SCREEN, hover_button, topic_buttons[selected_topic_index], hover)
+        draw_lefted_text(text, FONT_CB_20, (255, 255, 255), SCREEN, message_box.left, message_box.centery)
+        draw_messages(reversed(message_thread), FONT_CB_MESSAGE, CWMESSAGE_SIZE, FONT_CB_14, FONT_CBI_TOPIC,SCREEN)
+
+        # text input limit display
+        if message_limit:
+            draw_lefted_text('Message length limit reached!', FONT_CB_14, (0, 184, 252), SCREEN, message_box.left, message_box.bottom + 8)
+
