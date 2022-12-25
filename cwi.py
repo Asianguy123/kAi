@@ -129,22 +129,13 @@ def draw_messages(thread, font, font_size, time_font, topic_font, screen):
 # Main Function
 
 def chat_window(notif_s, notif_r):
+    '''
+    Chat window - the main interface
+    - takes in user string input and outputs an AI selected response
+    - can switch between specific topics via the select buttons on the left
+    ''' 
 
-    # setup
-    CWSCREEN = menu.SCREEN
-    CWCLOCK = menu.CLOCK
-    CWMESSAGE_SIZE = 24
-    MAX_BUBBLE_LENGTH = 300
-    current_dir = os.getcwd()
-    bg_image = pygame.image.load(f'{current_dir}/images/cwindow.tif')
-    font_message_box = pygame.font.SysFont('Calibri', 20, bold=True)
-    small_font = pygame.font.SysFont('Calibri', 14, bold=True)
-    font_messages = pygame.font.SysFont('Calibri', CWMESSAGE_SIZE, bold=True)
-    topic_font = pygame.font.SysFont('Calibri', CWMESSAGE_SIZE - 4, bold=True, italic=True)
-    message_s_notif = pygame.mixer.Sound(f'{current_dir}/notifications/message_sent.mp3')
-    message_r_notif = pygame.mixer.Sound(f'{current_dir}/notifications/message_received.mp3')
-
-    # toggles. lists and text
+    # booleans, lists and text
     message_lines_list = []
     responses_lines_list = []
     message_thread = []
@@ -152,8 +143,8 @@ def chat_window(notif_s, notif_r):
     hover = False
     typing_active = False
     message_limit = False
-    text = ''      
-    
+    text = ''
+
     # icons
     home_icon = pygame.Rect(10, 7, 27, 24)
     quit_icon = pygame.Rect(1249, 7, 23, 23)
@@ -174,3 +165,19 @@ def chat_window(notif_s, notif_r):
     topic_strs = ['General Chat', 'Anime', 'Kpop', 'Films', 'Games', 'Football', 'Your life', 'Your day', 'School']
     corpus_topics = ['general', 'anime', 'kpop', 'films', 'game', 'football', 'life', 'day', 'school']
     selected_topic_index = 0
+
+    # message box
+    message_box = pygame.Rect(275, 625, 875, 50)
+
+    while True:
+        mx, my = pygame.mouse.get_pos()
+        hover = False
+        hover_button = ''
+
+        # ---------------------------------------------------------------------------------------------------------------------
+        # Drawing Items
+
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), home_icon, 0)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), quit_icon, 0)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), send_icon, 0)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), message_box, 0)
