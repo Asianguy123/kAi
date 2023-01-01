@@ -228,10 +228,17 @@ def chat_window(notif_s, notif_r):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     click = True
-                    
+            
             # user message input
             if typing_active:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_BACKSPACE:
                         text = text[:-1] # deleting last character
                         message_limit = False
+                    elif event.key == pygame.K_RETURN:
+                        if text: # checking if there is a message to send
+                            message_lines_list = message_split(FONT_CB_20, text, MAX_BUBBLE_LENGTH)
+                            message_thread.append([0, message_lines_list, get_time()]) # 0 = user message and 1 = AI message, adds time of message
+                            if notif_s:
+                                pygame.mixer.Sound.play(MESSAGE_S_NOTIF)
+                            text = ''
