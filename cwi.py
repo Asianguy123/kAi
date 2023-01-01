@@ -228,3 +228,10 @@ def chat_window(notif_s, notif_r):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     click = True
+                    
+            # user message input
+            if typing_active:
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_BACKSPACE:
+                        text = text[:-1] # deleting last character
+                        message_limit = False
