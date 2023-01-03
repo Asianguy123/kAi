@@ -250,4 +250,13 @@ def chat_window(notif_s, notif_r):
         if FONT_CB_20.size(text)[0] < (message_box.width - 5):
             message_limit = False
         else:
-            message_limit = True            
+            message_limit = True
+            
+        # ---------------------------------------------------------------------------------------------------------------------
+        # Clicks
+
+        if click:
+            # help button icon click detection
+            help_icon_region = ((mx - 62)**2) + ((my - 19)**2)
+            if help_icon_region <= 169:
+                um_main()
