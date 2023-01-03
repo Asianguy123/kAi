@@ -246,3 +246,8 @@ def chat_window(notif_s, notif_r):
                         # adding character if there is space in the message box
                         if not message_limit:
                             text += event.unicode
+            
+        if FONT_CB_20.size(text)[0] < (message_box.width - 5):
+            message_limit = False
+        else:
+            message_limit = True            
