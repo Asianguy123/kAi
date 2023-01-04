@@ -269,3 +269,13 @@ def chat_window(notif_s, notif_r):
             if quit_icon.collidepoint(mx, my):
                 pygame.quit()
                 sys.exit()
+                
+            # send button icon click detection    
+            if send_icon.collidepoint(mx, my):
+                # same code as under ENTER key press
+                if text:
+                    message_lines_list = message_split(FONT_CB_20, text, MAX_BUBBLE_LENGTH)
+                    message_thread.append([0, message_lines_list, get_time()])
+                    if notif_s:
+                        pygame.mixer.Sound.play(MESSAGE_S_NOTIF)
+                    text = ''
