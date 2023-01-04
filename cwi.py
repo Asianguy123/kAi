@@ -289,3 +289,8 @@ def chat_window(notif_s, notif_r):
                 if topic_buttons[i].collidepoint(mx, my):
                     selected_topic_index = i
                     message_thread.append([2, topic_strs[selected_topic_index], get_time()])
+        
+        # window update
+        pygame.display.update()
+        CLOCK.tick(30)
+        SCREEN.blit(CW_BG_IMAGE, (0,0))
