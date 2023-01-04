@@ -279,3 +279,7 @@ def chat_window(notif_s, notif_r):
                     if notif_s:
                         pygame.mixer.Sound.play(MESSAGE_S_NOTIF)
                     text = ''
+            
+            # message input box click detection
+            if message_box.collidepoint(mx, my):
+                typing_active = True
