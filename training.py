@@ -86,33 +86,44 @@ def get_corpus_data(corpus_file):
     Extracts all the corpus data from a given JSON file and stores them in lists
     - gets pattern words, class tag names and documents (word-class pairs)
     '''
-    
+
     words = []
     word_classes = []
     docs = []
-    corpus = json.loads(open(f'{current_path}/corpora/{corpus_file}').read())
+    corpus = json.loads(open(f'{current_path}/corpora/{corpus_file}').read()) # reading the given corpus, turns it into a python dictionary
+
+    # loops through each word class and obtains data
     for intent in corpus['intents']:
         for pattern in intent['patterns']:
-            pattern_words = nltk.word_tokenize(pattern)
+            pattern_words = nltk.word_tokenize(pattern) # splits strings into words
             words.extend(pattern_words)
             docs.append((pattern_words, intent['tag']))
             if intent['tag'] not in word_classes:
                 word_classes.append(intent['tag'])
     save_data(words, word_classes, docs, corpus_file)
     
-def save_data(words_lst, word_classes_lst, docs_lst, corpus_file):
+def save_data(words_lst, word_classes_lst, docs, corpus_file):
+    '''
+    Saves the pattern words and classes from the corpus as alphabetical sets
+    File format .pkl, to preserve the nature of the data (sets)
+    '''
+
     corpus_name = str(corpus_file).strip('.json')
-    words = [lemmatiser.lemmatize(str(word).lower()) for word in words_lst if word not in ignore_chrs]
+    words = [lemmatiser.lemmatize(str(word).lower()) for word in words_lst if word not in ignore_chrs] # ignores punctuation
     words = sorted(set(words))
     word_classes = sorted(set(word_classes_lst))
     pickle.dump(words, open(f'models/{corpus_name}_words.pkl', 'wb'))
     pickle.dump(word_classes, open(f'models/{corpus_name}_classes.pkl', 'wb'))
-    create_training_data(words, word_classes, docs_lst, corpus_name)
+    create_training_data(words, word_classes, docs, corpus_name)
     
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
 def training_main():
+    '''
+    Main function of the training file, runs functions upon every JSON corpus in the file directory
+    '''
+
     for i in range(len(corpora)):
         get_corpus_data(corpora[i])
 
