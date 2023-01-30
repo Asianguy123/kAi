@@ -31,3 +31,9 @@ def draw_rect_transparent(surface, colour, rect, radius):
     shape_surf = pygame.Surface(pygame.Rect(rect).size, pygame.SRCALPHA) # makes a surface from rectangles of given rectangles, with alpha property
     pygame.draw.rect(shape_surf, colour, shape_surf.get_rect(), border_radius=radius) # draws rectangle using surface
     surface.blit(shape_surf, rect)
+
+def draw_centred_text(text, font, color, surface, x, y):
+    text_obj = font.render(text, 1, color)
+    text_rect = text_obj.get_rect()
+    text_rect.center = (x, y)
+    surface.blit(text_obj, text_rect)    
