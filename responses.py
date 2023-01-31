@@ -47,13 +47,19 @@ def bow(message_text, words):
     return numpy.array(bag)
 
 # ---------------------------------------------------------------------------------------------------------------------
-# Response Retrieval Functions
+# Class Prediction + Response Retrieval Functions
 
 def get_probabilities(message_text, words, model):
+    '''
+    Passes the bag of words into the model, gets probablilities of word classes
+    Filters the probablilites to get probablitity and index
+    '''
+
     bag_of_words = bow(message_text, words)
-    prediction = model.predict(numpy.array([bag_of_words]))[0]
-    results = [[i, result] for i, result in enumerate(prediction) if result > ERROR_THRESHOLD]
+    prediction = model.predict(numpy.array([bag_of_words]), verbose=0)[0] # returns an array of probabilities
+    results = [[i, result] for i, result in enumerate(prediction) if result > ERROR_THRESHOLD] # filters insignificant results
     return results
+
 
 def get_class(results, word_classes):
     results.sort(key=lambda x:x[1], reverse=True)
