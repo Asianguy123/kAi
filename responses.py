@@ -60,9 +60,12 @@ def get_probabilities(message_text, words, model):
     results = [[i, result] for i, result in enumerate(prediction) if result > ERROR_THRESHOLD] # filters insignificant results
     return results
 
-
 def get_class(results, word_classes):
-    results.sort(key=lambda x:x[1], reverse=True)
+    '''
+    Sorts results to get the top class prediction and class tag
+    '''
+
+    results.sort(key=lambda x:x[1], reverse=True) # sorts highest to lowest
     class_index = results[0][0]
     class_tag = word_classes[class_index]
     return class_tag
