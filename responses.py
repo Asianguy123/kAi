@@ -31,8 +31,15 @@ def message_clean_up(message_text):
     return message_words
 
 def bow(message_text, words):
+    '''
+    Bag of Words algorithm, creates a numpy binary array
+        - if an input word matches the training data => 1
+    '''
+
     message_words = message_clean_up(message_text)
     bag = [0] * len(words)
+    
+    # test each input word against every training word
     for m_word in message_words:
         for i, word in enumerate(words):
             if word == m_word:
