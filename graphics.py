@@ -73,3 +73,10 @@ def notification_box_text(message_notif_s, message_notif_r, sent_notif_button, r
     else:
         str_notif_s = 'OFF'
     draw_centred_text(f'Message Sent: {str_notif_s}', FONT_CB_20, (255, 255, 255), SCREEN, sent_notif_button.centerx, sent_notif_button.centery)
+
+    # message received notification
+    if message_notif_r:
+        str_notif_r = 'ON'
+    else:
+        str_notif_r = 'OFF'
+    draw_centred_text(f'Message Received: {str_notif_r}', FONT_CB_18, (255, 255, 255), SCREEN, received_notif_button.centerx, received_notif_button.centery)
