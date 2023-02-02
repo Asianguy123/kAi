@@ -80,23 +80,27 @@ def get_response(class_tag, corpus):
         if i['tag'] == class_tag:
             chatbot_response = random.choice(i['responses'])
     return chatbot_response
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
 def responses_main(model_name, message_text):
-    words = pickle.load(open(f'models/{model_name}_words.pkl', 'rb'))
-    word_classes = pickle.load(open(f'models/{model_name}_classes.pkl', 'rb'))
-    model = load_model(f'models/{model_name}_model.h5')
-    corpus = json.loads(open(f'corpora/{model_name}.json').read())
+    '''
+    Main response function, calls other functions and loads necessary files
+    Returns the ai response
+    '''
 
+    # loading files
+    words = pickle.load(open(f'{current_path}/models/{model_name}_words.pkl', 'rb'))
+    word_classes = pickle.load(open(f'{current_path}/models/{model_name}_classes.pkl', 'rb'))
+    model = load_model(f'{current_path}/models/{model_name}_model.h5')
+    corpus = json.loads(open(f'{current_path}/corpora/{model_name}.json').read())
+
+    # returning a response
     results = get_probabilities(message_text, words, model)
     class_tag = get_class(results, word_classes)
     response = get_response(class_tag, corpus)
-    if type(response) == list:
-        for x in response:
-            print(x)
-    else:
-        print(response)
+    return response
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Globals
