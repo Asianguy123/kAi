@@ -71,12 +71,15 @@ def get_class(results, word_classes):
     return class_tag
 
 def get_response(class_tag, corpus):
+    '''
+    Gets a random response from within the selected class
+    '''
+
     corpus_intents = corpus['intents']
     for i in corpus_intents:
         if i['tag'] == class_tag:
             chatbot_response = random.choice(i['responses'])
     return chatbot_response
-
 # ---------------------------------------------------------------------------------------------------------------------
 # Main Function
 
