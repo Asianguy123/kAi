@@ -94,3 +94,12 @@ def get_time():
     timestamp = datetime.datetime.now()
     timestamp = timestamp.strftime('%H:%M') # formats to 24 hour
     return timestamp
+
+def box_hover(surface, button, selected_button, hover):
+    '''
+    Draws an outline box to the hovered upon box, or the currently selected box
+    '''
+
+    if hover:
+        pygame.draw.rect(surface, (0, 184, 252), button, 4, border_radius=6)
+    pygame.draw.rect(surface, (0, 184, 252), selected_button, 4, border_radius=6)
