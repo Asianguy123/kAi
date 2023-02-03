@@ -80,3 +80,17 @@ def notification_box_text(message_notif_s, message_notif_r, sent_notif_button, r
     else:
         str_notif_r = 'OFF'
     draw_centred_text(f'Message Received: {str_notif_r}', FONT_CB_18, (255, 255, 255), SCREEN, received_notif_button.centerx, received_notif_button.centery)
+
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Chat Window Support Functions
+
+def get_time():
+    '''
+    Gets current device time in 24 hour using the datetime module
+    '''
+
+    timestamp = datetime.datetime.now()
+    timestamp = timestamp.strftime('%H:%M') # formats to 24 hour
+    return timestamp
