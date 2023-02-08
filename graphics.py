@@ -112,3 +112,16 @@ def message_split(font, message, max_length):
     Splits the user input message into message lines that can be displayed in one message block
         - prevents messages covering the whole screen, and allows for paragraphing
     '''
+
+    tokenised_message = message.split(' ')
+    messages = []
+    text = ''
+    for i in tokenised_message:
+        # if the input has word longer than the message width, split it
+        if font.size(i)[0] > (max_length - 5):
+            for chr in i:
+                if font.size(text)[0] > (max_length - 5):
+                    messages.append(text)
+                    text = ''
+                else:
+                    text += chr
