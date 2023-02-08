@@ -103,3 +103,12 @@ def box_hover(surface, button, selected_button, hover):
     if hover:
         pygame.draw.rect(surface, (0, 184, 252), button, 4, border_radius=6)
     pygame.draw.rect(surface, (0, 184, 252), selected_button, 4, border_radius=6)
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Message Functions
+
+def message_split(font, message, max_length):
+    '''
+    Splits the user input message into message lines that can be displayed in one message block
+        - prevents messages covering the whole screen, and allows for paragraphing
+    '''
