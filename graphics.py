@@ -125,3 +125,13 @@ def message_split(font, message, max_length):
                     text = ''
                 else:
                     text += chr
+        
+        else:
+            # checks if message line is within maximum message bubble width size
+            if font.size(text + i + ' ')[0] < (max_length - 5):
+                text += i + ' '
+            else:
+                messages.append(text)
+                text = i + ' '
+    messages.append(text.rstrip()) # removing last space
+    return messages
