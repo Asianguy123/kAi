@@ -135,3 +135,12 @@ def message_split(font, message, max_length):
                 text = i + ' '
     messages.append(text.rstrip()) # removing last space
     return messages
+
+def draw_messages(thread, font, font_size, time_font, topic_font, screen):
+    '''
+    Draws most recent messages that fit in the window
+        - draws bubbles of an appropriate size for each message
+        - spaces the bubbles accordingly
+        - outputs time of message next to bubble
+        - draws indicator of topic change
+    '''
