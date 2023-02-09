@@ -144,3 +144,13 @@ def draw_messages(thread, font, font_size, time_font, topic_font, screen):
         - outputs time of message next to bubble
         - draws indicator of topic change
     '''
+
+    y = 590 # bottom of lowest possible bubble
+    for i in thread:
+        if i[0] == 2:
+            if (y - topic_font.size(i[1])[1]) > 70:
+                draw_centred_text(i[1], topic_font, (0, 184, 252), screen, 731, y - 20)
+            y -= 50
+        else:
+            bubble_height = int((len(i[1]) + 1) * (font_size))
+            bubble_width = 0
