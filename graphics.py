@@ -159,3 +159,11 @@ def draw_messages(thread, font, font_size, time_font, topic_font, screen):
             for line in i[1]:
                 if font.size(line)[0] > bubble_width:
                     bubble_width = font.size(line)[0] + 20
+            
+            # setting user messages to right, ai responses to the left
+            if i[0] == 1:
+                x = 258
+                time_x = x + bubble_width + 10
+            else:
+                x = 1204 - bubble_width
+                time_x = x - 40
