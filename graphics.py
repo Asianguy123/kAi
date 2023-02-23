@@ -178,3 +178,15 @@ def draw_messages(thread, font, font_size, time_font, topic_font, screen):
                 y -= (bubble_height + 10)
             else:
                 return
+
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Chat Window Function
+
+def chat_window(notif_s, notif_r):
+    '''
+    Chat window - the main interface
+    - takes in user string input and outputs an AI selected response
+    - can switch between specific topics via the select buttons on the left
+    '''             
