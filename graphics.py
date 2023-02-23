@@ -201,3 +201,8 @@ def chat_window(notif_s, notif_r):
     message_limit = False
     text = ''
     pretext = 'Send kAi a message'
+
+    # icons
+    home_icon = pygame.Rect(10, 7, 27, 24)
+    quit_icon = pygame.Rect(1249, 7, 23, 23)
+    send_icon = pygame.Rect(1160, 636, 30, 27)
