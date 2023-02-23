@@ -189,4 +189,15 @@ def chat_window(notif_s, notif_r):
     Chat window - the main interface
     - takes in user string input and outputs an AI selected response
     - can switch between specific topics via the select buttons on the left
-    '''             
+    ''' 
+
+    # booleans, lists and text
+    message_lines_list = []
+    responses_lines_list = []
+    message_thread = []
+    click = False
+    hover = False
+    typing_active = False
+    message_limit = False
+    text = ''
+    pretext = 'Send kAi a message'
