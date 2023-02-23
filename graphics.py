@@ -219,3 +219,6 @@ def chat_window(notif_s, notif_r):
         pygame.Rect(49, 549, 143, 46),
         pygame.Rect(49, 615, 143, 46)
     ]
+    topic_strs = ['General Chat', 'Anime', 'Kpop', 'Films', 'Games', 'Football', 'Your life', 'Your day', 'School']
+    corpus_topics = ['general', 'anime', 'kpop', 'films', 'game', 'football', 'life', 'day', 'school']
+    selected_topic_index = 0
