@@ -238,3 +238,8 @@ def chat_window(notif_s, notif_r):
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), quit_icon, 0)
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), send_icon, 0)
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), message_box, 0)
+        for button in topic_buttons:
+            draw_rect_transparent(SCREEN, (0, 0, 0, 0), button, 4)
+            if button.collidepoint(mx, my):
+                hover = True
+                hover_button = button
