@@ -230,3 +230,11 @@ def chat_window(notif_s, notif_r):
         mx, my = pygame.mouse.get_pos()
         hover = False
         hover_button = ''
+
+        # ---------------------------------------------------------------------------------------------------------------------
+        # Drawing Items
+
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), home_icon, 0)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), quit_icon, 0)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), send_icon, 0)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), message_box, 0)
