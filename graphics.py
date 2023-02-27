@@ -220,5 +220,13 @@ def chat_window(notif_s, notif_r):
         pygame.Rect(49, 615, 143, 46)
     ]
     topic_strs = ['General Chat', 'Anime', 'Kpop', 'Films', 'Games', 'Football', 'Your life', 'Your day', 'School']
-    corpus_topics = ['general', 'anime', 'kpop', 'films', 'game', 'football', 'life', 'day', 'school']
+    corpus_topics = ['general', 'anime', 'kpop', 'films', 'games', 'football', 'life', 'day', 'school']
     selected_topic_index = 0
+
+    # message box
+    message_box = pygame.Rect(275, 625, 875, 50)
+
+    while True:
+        mx, my = pygame.mouse.get_pos()
+        hover = False
+        hover_button = ''
