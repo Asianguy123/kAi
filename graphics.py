@@ -247,3 +247,7 @@ def chat_window(notif_s, notif_r):
         draw_lefted_text(text, FONT_CB_20, (255, 255, 255), SCREEN, message_box.left, message_box.centery)
         draw_lefted_text(pretext, FONT_CI_20, (133, 133, 133), SCREEN, message_box.left, message_box.centery)
         draw_messages(reversed(message_thread), FONT_CB_MESSAGE, CWMESSAGE_SIZE, FONT_CB_14, FONT_CBI_TOPIC,SCREEN)
+
+        # text input limit display
+        if message_limit:
+            draw_lefted_text('Message length limit reached!', FONT_CB_14, (0, 184, 252), SCREEN, message_box.left, message_box.bottom + 8)
