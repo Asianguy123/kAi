@@ -243,3 +243,7 @@ def chat_window(notif_s, notif_r):
             if button.collidepoint(mx, my):
                 hover = True
                 hover_button = button
+        box_hover(SCREEN, hover_button, topic_buttons[selected_topic_index], hover)
+        draw_lefted_text(text, FONT_CB_20, (255, 255, 255), SCREEN, message_box.left, message_box.centery)
+        draw_lefted_text(pretext, FONT_CI_20, (133, 133, 133), SCREEN, message_box.left, message_box.centery)
+        draw_messages(reversed(message_thread), FONT_CB_MESSAGE, CWMESSAGE_SIZE, FONT_CB_14, FONT_CBI_TOPIC,SCREEN)
