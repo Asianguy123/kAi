@@ -264,3 +264,7 @@ def chat_window(notif_s, notif_r):
                     end_time = time.time()
                     if (end_time - start_time) > 0.3:
                         loop = False
+                
+                # getting ai response to add to thread
+                param_text = ' '.join(i for i in message_thread[-1][1])
+                ai_response = responses.responses_main(corpus_topics[selected_topic_index], param_text)
