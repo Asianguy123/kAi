@@ -268,3 +268,7 @@ def chat_window(notif_s, notif_r):
                 # getting ai response to add to thread
                 param_text = ' '.join(i for i in message_thread[-1][1])
                 ai_response = responses.responses_main(corpus_topics[selected_topic_index], param_text)
+                if type(ai_response) == list:
+                    for i in ai_response:
+                        responses_lines_list = message_split(FONT_CB_20, i, MAX_BUBBLE_LENGTH)
+                        message_thread.append([1, responses_lines_list, get_time()])
