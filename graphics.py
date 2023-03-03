@@ -272,3 +272,6 @@ def chat_window(notif_s, notif_r):
                     for i in ai_response:
                         responses_lines_list = message_split(FONT_CB_20, i, MAX_BUBBLE_LENGTH)
                         message_thread.append([1, responses_lines_list, get_time()])
+                else:
+                    responses_lines_list = message_split(FONT_CB_20, ai_response, MAX_BUBBLE_LENGTH)
+                    message_thread.append([1, responses_lines_list, get_time()])   
