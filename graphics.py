@@ -300,3 +300,7 @@ def chat_window(notif_s, notif_r):
                             if notif_s:
                                 pygame.mixer.Sound.play(MESSAGE_S_NOTIF)
                             text = ''
+                    else:
+                        # adding character if there is space in the message box
+                        if not message_limit:
+                            text += event.unicode
