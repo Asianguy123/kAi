@@ -277,3 +277,12 @@ def chat_window(notif_s, notif_r):
                     message_thread.append([1, responses_lines_list, get_time()])            
                 if notif_r:
                     pygame.mixer.Sound.play(MESSAGE_R_NOTIF)
+
+        # ---------------------------------------------------------------------------------------------------------------------
+        # Event Loop
+
+        click = False
+        for event in pygame.event.get(): 
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    click = True
