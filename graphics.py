@@ -322,3 +322,8 @@ def chat_window(notif_s, notif_r):
             # home button icon click detection
             if home_icon.collidepoint(mx, my):
                 menu()
+            
+            # quit button icon click detection
+            if quit_icon.collidepoint(mx, my):
+                pygame.quit()
+                sys.exit()
