@@ -318,3 +318,7 @@ def chat_window(notif_s, notif_r):
             help_icon_region = ((mx - 62)**2) + ((my - 19)**2)
             if help_icon_region <= 169:
                 um_main()
+            
+            # home button icon click detection
+            if home_icon.collidepoint(mx, my):
+                menu()
