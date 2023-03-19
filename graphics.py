@@ -353,3 +353,16 @@ def chat_window(notif_s, notif_r):
         pygame.display.update()
         CLOCK.tick(30)
         SCREEN.blit(CW_BG_IMAGE, (0,0))
+
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# User Manual Function
+
+def um_main():
+    '''
+    - Runs the user manual, displays a slideshow of images that loops
+    - Has special case buttons that work on a specific slide (slide 0)
+    - Can be exited to return to main menu at any point by pressing the ESC key
+    - Can be accessed from both the menu and chat window
+    '''
