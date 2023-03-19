@@ -342,3 +342,9 @@ def chat_window(notif_s, notif_r):
             if message_box.collidepoint(mx, my):
                 typing_active = True
                 pretext = ''
+
+            # topic button click detection
+            for i in range(len(topic_buttons)):
+                if topic_buttons[i].collidepoint(mx, my):
+                    selected_topic_index = i
+                    message_thread.append([2, topic_strs[selected_topic_index], get_time()])
