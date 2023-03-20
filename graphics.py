@@ -371,3 +371,7 @@ def um_main():
     click = False
     running = True
     image_index = 0
+    
+    # click boxes
+    home_icon = pygame.Rect(10, 7, 27, 24)
+    quit_icon = pygame.Rect(1249, 7, 23, 23)
