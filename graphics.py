@@ -366,3 +366,8 @@ def um_main():
     - Can be exited to return to main menu at any point by pressing the ESC key
     - Can be accessed from both the menu and chat window
     '''
+
+    # setup
+    click = False
+    running = True
+    image_index = 0
