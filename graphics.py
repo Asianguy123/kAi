@@ -375,3 +375,10 @@ def um_main():
     # click boxes
     home_icon = pygame.Rect(10, 7, 27, 24)
     quit_icon = pygame.Rect(1249, 7, 23, 23)
+
+    while running:
+        mx, my = pygame.mouse.get_pos()
+
+        # drawing click boxes
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), home_icon, 0)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), quit_icon, 0)
