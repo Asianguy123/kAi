@@ -394,3 +394,9 @@ def um_main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     click = True
+
+        # special case on slide 0, home icon and quit icon 
+        if image_index == 0:
+            if home_icon.collidepoint(mx, my):
+                if click:
+                    menu()
