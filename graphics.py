@@ -400,3 +400,7 @@ def um_main():
             if home_icon.collidepoint(mx, my):
                 if click:
                     menu()
+            if quit_icon.collidepoint(mx, my):
+                if click:
+                    pygame.quit()
+                    sys.exit()
