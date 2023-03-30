@@ -382,3 +382,12 @@ def um_main():
         # drawing click boxes
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), home_icon, 0)
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), quit_icon, 0)
+
+        # ---------------------------------------------------------------------------------------------------------------------
+        # Events
+
+        click = False
+        for event in pygame.event.get(): 
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    running = False
