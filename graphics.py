@@ -404,3 +404,8 @@ def um_main():
                 if click:
                     pygame.quit()
                     sys.exit()
+        
+        # implementing slideshow 
+        if click:
+            image_index = (image_index + 1) % len(UM_IMAGES)
+        image = pygame.image.load(f'{CURRENT_DIR}/images/user_manual_images/{UM_IMAGES[image_index]}')
