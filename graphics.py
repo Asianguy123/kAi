@@ -409,3 +409,8 @@ def um_main():
         if click:
             image_index = (image_index + 1) % len(UM_IMAGES)
         image = pygame.image.load(f'{CURRENT_DIR}/images/user_manual_images/{UM_IMAGES[image_index]}')
+        
+        # window update
+        pygame.display.flip()
+        CLOCK.tick(30)
+        SCREEN.blit(image, (0,0))
