@@ -429,4 +429,12 @@ def menu():
     # booleans
     click = False
     message_notif_s = True
-    message_notif_r = True    
+    message_notif_r = True
+
+    # click boxes
+    quit_icon = pygame.Rect(891, 7, 24, 24)
+    chat_button = pygame.Rect(542, 366, 192, 58)
+    help_button = pygame.Rect(542, 454, 192, 58)
+    sent_notif_button= pygame.Rect(542, 541, 192, 58)
+    received_notif_button = pygame.Rect(542, 628, 192, 58)
+    hover_boxes = [chat_button, help_button, sent_notif_button, received_notif_button]  
