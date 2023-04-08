@@ -424,4 +424,9 @@ def menu():
     '''
     Main function for the main menu, runs and display menu screen
     Calls other screens, dependent on user action
-    '''       
+    '''
+
+    # booleans
+    click = False
+    message_notif_s = True
+    message_notif_r = True    
