@@ -438,6 +438,7 @@ def menu():
     sent_notif_button= pygame.Rect(542, 541, 192, 58)
     received_notif_button = pygame.Rect(542, 628, 192, 58)
     hover_boxes = [chat_button, help_button, sent_notif_button, received_notif_button]
+    
 
     while True:
         mx, my = pygame.mouse.get_pos()
@@ -451,3 +452,8 @@ def menu():
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), sent_notif_button, 0)
         draw_rect_transparent(SCREEN, (0, 0, 0, 0), received_notif_button, 0)
         notification_box_text(message_notif_s, message_notif_r, sent_notif_button, received_notif_button)
+
+        # box hover outline
+        for box in hover_boxes:
+            if box.collidepoint(mx, my):
+                pygame.draw.rect(SCREEN, (0, 184, 252), box, 4)
