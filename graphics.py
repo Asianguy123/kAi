@@ -444,3 +444,10 @@ def menu():
 
         # ---------------------------------------------------------------------------------------------------------------------
         # Drawing Items
+
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), quit_icon, 0)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), chat_button, 0)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), help_button, 0)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), sent_notif_button, 0)
+        draw_rect_transparent(SCREEN, (0, 0, 0, 0), received_notif_button, 0)
+        notification_box_text(message_notif_s, message_notif_r, sent_notif_button, received_notif_button)
