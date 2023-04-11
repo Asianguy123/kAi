@@ -457,3 +457,12 @@ def menu():
         for box in hover_boxes:
             if box.collidepoint(mx, my):
                 pygame.draw.rect(SCREEN, (0, 184, 252), box, 4)
+   
+        # ---------------------------------------------------------------------------------------------------------------------
+        # Event Loop
+
+        click = False
+        for event in pygame.event.get():    
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    click = True
