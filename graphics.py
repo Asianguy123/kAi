@@ -475,3 +475,8 @@ def menu():
             help_icon_region = (mx - (354 + 22))**2 + ((my - 19)**2)
             if help_icon_region <= 256 or help_button.collidepoint(mx, my):
                um_main()
+    
+            # quit button icon click detection
+            if quit_icon.collidepoint(mx, my):
+                pygame.quit()
+                sys.exit()
