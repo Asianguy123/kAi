@@ -466,3 +466,12 @@ def menu():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     click = True
+
+        # ---------------------------------------------------------------------------------------------------------------------
+        # Clicks
+
+        if click:
+            # help button icon click detection
+            help_icon_region = (mx - (354 + 22))**2 + ((my - 19)**2)
+            if help_icon_region <= 256 or help_button.collidepoint(mx, my):
+               um_main()
