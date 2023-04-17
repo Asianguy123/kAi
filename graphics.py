@@ -480,3 +480,7 @@ def menu():
             if quit_icon.collidepoint(mx, my):
                 pygame.quit()
                 sys.exit()
+            
+            # chat button click detection, send to chat window
+            if chat_button.collidepoint(mx, my):
+                chat_window(message_notif_s, message_notif_r)
