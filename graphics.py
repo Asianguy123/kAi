@@ -484,3 +484,9 @@ def menu():
             # chat button click detection, send to chat window
             if chat_button.collidepoint(mx, my):
                 chat_window(message_notif_s, message_notif_r)
+        
+            # notification toggle click detection
+            if sent_notif_button.collidepoint(mx, my):
+                message_notif_s = not message_notif_s
+                print(f'message_notif_s: {message_notif_s}')
+                print(f'message_notif_r: {message_notif_r}')
