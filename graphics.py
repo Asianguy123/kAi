@@ -490,3 +490,7 @@ def menu():
                 message_notif_s = not message_notif_s
                 print(f'message_notif_s: {message_notif_s}')
                 print(f'message_notif_r: {message_notif_r}')
+            if received_notif_button.collidepoint(mx, my):
+                message_notif_r = not message_notif_r
+                print(f'message_notif_s: {message_notif_s}')
+                print(f'message_notif_r: {message_notif_r}')
