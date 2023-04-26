@@ -491,4 +491,10 @@ def menu():
             if received_notif_button.collidepoint(mx, my):
                 message_notif_r = not message_notif_r
 
+        # window update
+        pygame.display.update()
+        CLOCK.tick(30)
+        SCREEN.fill(TRANSPARENT)
+        SCREEN.blit(MENU_BG_IMAGE, (354,0))
+
         
