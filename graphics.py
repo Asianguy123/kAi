@@ -502,4 +502,9 @@ def menu():
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Setup + Globals
 
-        
+# constants
+CURRENT_DIR = os.getcwd()
+SCREEN_WIDTH = 1280
+SCREEN_HEIGHT = 720
+CWMESSAGE_SIZE = 24
+MAX_BUBBLE_LENGTH = 300  
