@@ -507,4 +507,10 @@ CURRENT_DIR = os.getcwd()
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
 CWMESSAGE_SIZE = 24
-MAX_BUBBLE_LENGTH = 300  
+MAX_BUBBLE_LENGTH = 300
+
+# pygame initialisation
+pygame.mixer.pre_init()
+pygame.init()
+CLOCK = pygame.time.Clock()
+SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.NOFRAME)
