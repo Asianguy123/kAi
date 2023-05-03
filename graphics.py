@@ -438,7 +438,6 @@ def menu():
     sent_notif_button= pygame.Rect(542, 541, 192, 58)
     received_notif_button = pygame.Rect(542, 628, 192, 58)
     hover_boxes = [chat_button, help_button, sent_notif_button, received_notif_button]
-    
 
     while True:
         mx, my = pygame.mouse.get_pos()
@@ -520,6 +519,7 @@ TRANSPARENT = (0, 0, 0)
 hwnd = pygame.display.get_wm_info()["window"]
 win32gui.SetWindowLong(hwnd, win32con.GWL_EXSTYLE, win32gui.GetWindowLong(hwnd, win32con.GWL_EXSTYLE) | win32con.WS_EX_LAYERED)
 win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(*TRANSPARENT), 0, win32con.LWA_COLORKEY)
+
 # images and sounds
 MENU_BG_IMAGE = pygame.image.load(f'{CURRENT_DIR}/images/main_menu.tif')
 CW_BG_IMAGE = pygame.image.load(f'{CURRENT_DIR}/images/cwindow.tif')
@@ -534,3 +534,11 @@ FONT_CB_20 = pygame.font.SysFont('Calibri', 20, bold=True)
 FONT_CI_20 = pygame.font.SysFont('Calibri', 20, italic=True)
 FONT_CBI_TOPIC = pygame.font.SysFont('Calibri', CWMESSAGE_SIZE - 4, bold=True, italic=True)
 FONT_CB_MESSAGE = pygame.font.SysFont('Calibri', CWMESSAGE_SIZE, bold=True)
+
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Runs Code
+
+if __name__ == '__main__':
+    menu()
