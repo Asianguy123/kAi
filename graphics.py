@@ -520,3 +520,10 @@ TRANSPARENT = (0, 0, 0)
 hwnd = pygame.display.get_wm_info()["window"]
 win32gui.SetWindowLong(hwnd, win32con.GWL_EXSTYLE, win32gui.GetWindowLong(hwnd, win32con.GWL_EXSTYLE) | win32con.WS_EX_LAYERED)
 win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(*TRANSPARENT), 0, win32con.LWA_COLORKEY)
+
+# images and sounds
+MENU_BG_IMAGE = pygame.image.load(f'{CURRENT_DIR}/images/main_menu.tif')
+CW_BG_IMAGE = pygame.image.load(f'{CURRENT_DIR}/images/cwindow.tif')
+UM_IMAGES = [pic for pic in os.listdir(f'{CURRENT_DIR}/images/user_manual_images/') if pic.endswith('.tif')]
+MESSAGE_S_NOTIF = pygame.mixer.Sound(f'{CURRENT_DIR}/notifications/message_sent.mp3')
+MESSAGE_R_NOTIF = pygame.mixer.Sound(f'{CURRENT_DIR}/notifications/message_received.mp3')
