@@ -520,10 +520,17 @@ TRANSPARENT = (0, 0, 0)
 hwnd = pygame.display.get_wm_info()["window"]
 win32gui.SetWindowLong(hwnd, win32con.GWL_EXSTYLE, win32gui.GetWindowLong(hwnd, win32con.GWL_EXSTYLE) | win32con.WS_EX_LAYERED)
 win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(*TRANSPARENT), 0, win32con.LWA_COLORKEY)
-
 # images and sounds
 MENU_BG_IMAGE = pygame.image.load(f'{CURRENT_DIR}/images/main_menu.tif')
 CW_BG_IMAGE = pygame.image.load(f'{CURRENT_DIR}/images/cwindow.tif')
 UM_IMAGES = [pic for pic in os.listdir(f'{CURRENT_DIR}/images/user_manual_images/') if pic.endswith('.tif')]
 MESSAGE_S_NOTIF = pygame.mixer.Sound(f'{CURRENT_DIR}/notifications/message_sent.mp3')
 MESSAGE_R_NOTIF = pygame.mixer.Sound(f'{CURRENT_DIR}/notifications/message_received.mp3')
+
+# fonts - CB_14 = Calibri bold, size 14     ;    CBI = Calibri bold italic
+FONT_CB_14 = pygame.font.SysFont('Calibri', 14, bold=True)
+FONT_CB_18 = pygame.font.SysFont('Calibri', 18, bold=True)
+FONT_CB_20 = pygame.font.SysFont('Calibri', 20, bold=True)
+FONT_CI_20 = pygame.font.SysFont('Calibri', 20, italic=True)
+FONT_CBI_TOPIC = pygame.font.SysFont('Calibri', CWMESSAGE_SIZE - 4, bold=True, italic=True)
+FONT_CB_MESSAGE = pygame.font.SysFont('Calibri', CWMESSAGE_SIZE, bold=True)
