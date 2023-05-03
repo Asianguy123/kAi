@@ -56,7 +56,7 @@ def get_probabilities(message_text, words, model):
     '''
 
     bag_of_words = bow(message_text, words)
-    prediction = model.predict(numpy.array([bag_of_words]), verbose=0)[0] # returns an array of probabilities
+    prediction = model(numpy.array([bag_of_words]), training=False)[0] # returns an array of probabilities
     results = [[i, result] for i, result in enumerate(prediction) if result > ERROR_THRESHOLD] # filters insignificant results
     return results
 
