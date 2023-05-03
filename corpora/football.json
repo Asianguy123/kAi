@@ -1,0 +1,7 @@
+{"intents": [
+    {
+        "tag": "united",
+        "patterns": ["harry maguire", "best club", "red devils", "favourite"],
+        "responses": ["I love man united", "United is the best club itw", "GGMU"]
+    }
+]}
