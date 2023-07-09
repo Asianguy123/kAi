@@ -1,2 +1,4 @@
 # kAI
-A-Level OCR H446 NEA - AI based chatbot
+A-Level OCR CS H446 NEA => semi-retrieval AI based chatbot
+
+
