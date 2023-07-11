@@ -13,3 +13,18 @@ A-Level OCR CS H446 NEA => semi-retrieval AI based chatbot<br><br>
 - Uses as little storage space as possible
 - Runs on Win10 and later versions as an .exe ==> runs as a .py file on Python 3.9 and later, provided all external libraries are installed and up to date
 
+# How to Run and Use
+**Raw Python File**:
+<ol><li>Download the zip file and extract the contents</li>
+  <li>Install Python 3.9 (or later)</li>
+  <li>Use pip in cmd to install tensorflow, numpy, nltk and pygame</li>
+  <li>Run the 'graphics.py' file</li>
+  <li>'kAi.exe' can be deleted to save storage space</li>
+</ol>
+
+**Executable**:
+<ol><li>Download the zip file and extract the contents</li>
+  <li>Run 'kAi.exe'</li>
+</ol>
+
+User manual can be accessed at all times within the menu and chat window by clicking the help icon
