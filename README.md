@@ -45,6 +45,6 @@ User manual can be accessed at all times within the menu and chat window by clic
     - cost functions and backpropagtion (SGD)
     - RNNs and Seq2Seq models
 - Pre-decomposition
-    - flowcharts and top down diagrams
-    - function/procedure tables and pseudocode writing
+    - flowcharts, top down diagrams and function/procedure tables
+    - algorithm design using pseudocode
 - Types of testing e.g. black box, alpha and beta
