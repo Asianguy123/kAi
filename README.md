@@ -1,7 +1,7 @@
 # kAI
 A-Level OCR CS H446 NEA => semi-retrieval AI based chatbot<br><br>
 
-# Requirements
+# Project Requirements
 
 - Interface is a clean and simple dark theme, easy to view for the visually impaired
 - 1280x720 resolution display
@@ -16,8 +16,8 @@ A-Level OCR CS H446 NEA => semi-retrieval AI based chatbot<br><br>
 # How to Run and Use
 **Raw Python File**:
 <ol><li>Download the zip file and extract the contents</li>
-  <li>Install Python 3.9 (or later)</li>
-  <li>Use pip in cmd to install tensorflow, numpy, nltk and pygame</li>
+  <li>Install Python 3.9+</li>
+  <li>Use pip to install tensorflow 2.11.0+, numpy 1.22.3+, nltk 3.7+, pygame 2.1.2+</li>
   <li>Run the 'graphics.py' file</li>
   <li>'kAi.exe' can be deleted to save storage space</li>
 </ol>
