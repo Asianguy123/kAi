@@ -52,8 +52,9 @@ User manual can be accessed at all times within the menu and chat window by clic
 ### Programming
 - Using TensorFlow to create and use a NN model
     - forming numpy arrays to creating training binaries
-- Pickling data to preserve its use across multiple files
-- Utilising JSON file format to store and access data
-- Conditional list comprehensions
-- Single line lambda functions
-- 
+- Conditional list comprehensions and lambda functions
+- Message thread processing and splitting
+- - Storing data for multi-file use
+    - JSON for training data
+    - Pickling data for BOW algorithm
+- Use of win32 library to create transparent window
