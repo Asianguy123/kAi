@@ -58,3 +58,9 @@ User manual can be accessed at all times within the menu and chat window by clic
     - JSON for training data
     - Pickling data for BOW algorithm
 - Use of win32 library to create transparent window
+
+# Improvements
+
+The current corpus is still a test corpus, so training data must be gained/written in order for the full functionality of the program to exist.<br>
+Beyond this, future improvements could include a deep learning AI rather than a semi-retrieval based AI which constructs the messages itself
+&nbsp;&nbsp;&nbsp;&nbsp;=> would require lots of training to reach an acceptable quality
