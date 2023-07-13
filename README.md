@@ -48,3 +48,12 @@ User manual can be accessed at all times within the menu and chat window by clic
     - flowcharts, top down diagrams and function/procedure tables
     - algorithm design using pseudocode
 - Types of testing e.g. black box, alpha and beta
+
+### Programming
+- Using TensorFlow to create and use a NN model
+    - forming numpy arrays to creating training binaries
+- Pickling data to preserve its use across multiple files
+- Utilising JSON file format to store and access data
+- Conditional list comprehensions
+- Single line lambda functions
+- 
