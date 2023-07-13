@@ -61,6 +61,12 @@ User manual can be accessed at all times within the menu and chat window by clic
 
 # Improvements
 
-The current corpus is still a test corpus, so training data must be gained/written in order for the full functionality of the program to exist.<br>
-Beyond this, future improvements could include a deep learning AI rather than a semi-retrieval based AI which constructs the messages itself
-&nbsp;&nbsp;&nbsp;&nbsp;=> would require lots of training to reach an acceptable quality
+- The current corpus is still a test corpus, so training data must be gained/written in order for the full functionality of the program to exist
+- Deep learning AI rather than a semi-retrieval based AI which constructs the messages itself
+    - would require lots of training to reach an acceptable quality
+- Fix the message send and recieve timings, along with the notifications
+    - currently occur at the same time
+- Combine all corpora and models into a single model to maximise program storage size
+- Create a neural network from scratch to remove dependency and bloat from TensorFlow
+- Allow for use of emojis/emoticons that can be recognised by the AI
+
