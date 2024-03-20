@@ -1,7 +1,9 @@
 # kAI
-A-Level OCR CS H446 NEA => semi-retrieval AI based chatbot<br><br>
+Semi-retrieval AI based chatbot made in Python using TensorFlow + Pygame
 
-# Project Requirements
+A-Level OCR CS H446 2023 NEA
+
+## Project Requirements
 
 - Interface is a clean and simple dark theme, easy to view for the visually impaired
 - 1280x720 resolution display
@@ -13,7 +15,7 @@ A-Level OCR CS H446 NEA => semi-retrieval AI based chatbot<br><br>
 - Uses as little storage space as possible
 - Runs on Win10 and later versions as an .exe ==> runs as a .py file on Python 3.9 and later, provided all external libraries are installed and up to date
 
-# How to Run and Use
+## How to Run and Use
 
 **Raw Python File**:
 <ol>
@@ -32,7 +34,7 @@ A-Level OCR CS H446 NEA => semi-retrieval AI based chatbot<br><br>
 
 User manual can be accessed at all times within the menu and chat window by clicking the help icon
 
-# What I Learnt
+## What I Learnt
 
 ### Theory
 - Development Methodologies - used an agile and waterfall model
@@ -59,7 +61,7 @@ User manual can be accessed at all times within the menu and chat window by clic
     - Pickling data for BOW algorithm
 - Use of win32 library to create transparent window
 
-# Improvements
+## Improvements
 
 - The current corpus is still a test corpus, so training data must be gained/written in order for the full functionality of the program to exist
 - Deep learning AI rather than a semi-retrieval based AI which constructs the messages itself
