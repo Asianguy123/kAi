@@ -63,7 +63,7 @@ User manual can be accessed at all times within the menu and chat window by clic
 
 ## Improvements
 
-- The current corpus is still a test corpus, so training data must be gained/written in order for the full functionality of the program to exist
+- The currently used corpus is a test corpus
 - Deep learning AI rather than a semi-retrieval based AI which constructs the messages itself
     - would require lots of training to reach an acceptable quality
 - Fix the message send and recieve timings, along with the notifications
